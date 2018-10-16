@@ -20,16 +20,16 @@ describe ("Prototype redefinition", function() {
 
   it ("Redefining the prototype does NOT modify existing instances", function() {
     expect(warrior.hp).toBeDefined()
-    expect(warrior.hp).toBeEquals(__)
-    expect(warrior.armor).toBe__()
-    expect(warrior.shout).toBe__()
+    expect(warrior.hp).toEqual(100)
+    expect(warrior.armor).toBeDefined()
+    expect(warrior.shout).toBeUndefined()
   })
 
   it ("Redefining the prototype does modify future instances", function() {
     expect(warrior2.hp).toBeDefined()
-    expect(warrior2.hp).toBeEquals(__)
-    expect(warrior2.armor).toBe__()
-    expect(warrior2.shout).toBe__()
+    expect(warrior2.hp).toEqual(150)
+    expect(warrior2.armor).toBeUndefined()
+    expect(warrior2.shout).toBeDefined()
   })
 
 })
