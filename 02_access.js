@@ -1,8 +1,8 @@
 describe ("Properties access", function() {
-  let warrior;
+  let warrior, Character;
 
   beforeEach(function() {
-    const Character = function() {};
+    Character = function() {};
     Character.prototype.hp = 100;
     Character.prototype.armor = 10;
 
