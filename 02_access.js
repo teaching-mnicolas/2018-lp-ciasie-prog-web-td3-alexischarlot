@@ -40,6 +40,6 @@ describe ("Properties access", function() {
   it ("Deleting a property on an object can reveal prototype's property", function() {
     expect(warrior.armor).toEqual(50);
     delete warrior.armor;
-    expect(warrior.armor).toEqual(0);
+    expect(warrior.armor).toEqual(10);
   });
 });

@@ -1,31 +1,31 @@
 describe ("Constructors", function() {
 
   it ("Object is constructor of {}", function() {
-    expect({}.constructor).toBe(__);
+    expect({}.constructor).toBe(Object);
   });
 
   it ("Array is constructor of []", function() {
-    expect([].constructor).toBe(__);
+    expect([].constructor).toBe(Array);
   });
 
   it ("String is constructor of ''", function() {
-    expect("".constructor).toBe(__);
+    expect("".constructor).toBe(String);
   });
 
   it ("Number is constructor of 1", function() {
-    expect((1).constructor).toBe(__);
+    expect((1).constructor).toBe(Number);
   });
 
   it ("Boolean is constructor of true", function() {
-    expect(true.constructor).toBe(__);
+    expect(true.constructor).toBe(Boolean);
   });
 
   it ("RegExp is constructor of /aaa/", function() {
-    expect(/aaa/.constructor).toBe(__);
+    expect(/aaa/.constructor).toBe(RegExp);
   });
 
   it ("Function is constructor of a function", function() {
     const f = function() {};
-    expect(f.constructor).toBe(__);
+    expect(f.constructor).toBe(Function);
   });
 });
