@@ -2,33 +2,33 @@ describe ("Strangeness", function() {
 
   describe ("Mutables", function() {
     it ("{} is of type Object", function() {
-      expect(({}) instanceof Object).toBe__();      // true or false
+      expect(({}) instanceof Object).toBeTruthy();      // true or false
     });
 
     it ("[] is of type Array", function() {
-      expect([] instanceof Array).toBe__();       // true or false
+      expect([] instanceof Array).toBeTruthy();       // true or false
     });
 
     it ("[] is of type Object also", function() {
-      expect([] instanceof Object).toBe__();      // true or false
+      expect([] instanceof Object).toBeTruthy();      // true or false
     });
 
     it ("/aaa/ is of type RegExp", function() {
-      expect(/aaa/ instanceof RegExp).toBe__();   // true or false
+      expect(/aaa/ instanceof RegExp).toBeTruthy();   // true or false
     });
 
     it ("/aaa/ is of type Object also", function() {
-      expect(/aaa/ instanceof Object).toBe__();   // true or false
+      expect(/aaa/ instanceof Object).toBeTruthy();   // true or false
     });
 
     it ("f is of type Function", function() {
       const f = function() {};
-      expect(f instanceof Function).toBe__();     // true or false
+      expect(f instanceof Function).toBeTruthy();     // true or false
     });
 
     it ("f is of type Object also", function() {
       const f = function() {};
-      expect(f instanceof Object).toBe__();       // true or false
+      expect(f instanceof Object).toBeTruthy();       // true or false
     });
   });
 
@@ -41,16 +41,16 @@ describe ("Strangeness", function() {
       });
 
       it ("1 is NOT instance of Number", function() {
-        expect(1 instanceof Number).toBe__();     // true or false
+        expect(1 instanceof Number).toBeFalsy();     // true or false
       });
 
       it ("1 is NOT instance of Object", function() {
-        expect(1 instanceof Object).toBe__();     // true or false
+        expect(1 instanceof Object).toBeFalsy();     // true or false
       });
 
       it ("but new Number is a Number", function() {
         const n = new Number();
-        expect(n instanceof Number).toBe__();     // true or false
+        expect(n instanceof Number).toBeTruthy();     // true or false
       });
     });
 
@@ -60,16 +60,16 @@ describe ("Strangeness", function() {
       });
 
       it ("'' is NOT instance of String", function() {
-        expect('' instanceof String).toBe__();    // true or false
+        expect('' instanceof String).toBeFalsy();    // true or false
       });
 
       it ("'' is NOT instance of Object", function() {
-        expect('' instanceof Object).toBe__();    // true or false
+        expect('' instanceof Object).toBeFalsy();    // true or false
       });
 
       it ("but new String is a String", function() {
         const s = new String();
-        expect(s instanceof String).toBe__();     // true or false
+        expect(s instanceof String).toBeTruthy();     // true or false
       });
     });
 
@@ -79,16 +79,16 @@ describe ("Strangeness", function() {
       });
 
       it ("true is NOT instance of Boolean", function() {
-        expect(true instanceof Boolean).toBe__();   // true or false
+        expect(true instanceof Boolean).toBeFalsy();   // true or false
       });
 
       it ("true is NOT instance of Object", function() {
-        expect(true instanceof Object).toBe__();    // true or false
+        expect(true instanceof Object).toBeFalsy();    // true or false
       });
 
       it ("but new Boolean is a Boolean", function() {
         const b = new Boolean();
-        expect(b instanceof Boolean).toBe__();      // true or false
+        expect(b instanceof Boolean).toBeTruthy();      // true or false
       });
     });
 
@@ -102,11 +102,11 @@ describe ("Strangeness", function() {
       });
 
       it ("Infinity is NOT instance of Number", function() {
-        expect(Infinity instanceof Number).toBe__();      // true or false
+        expect(Infinity instanceof Number).toBeFalsy();      // true or false
       });
 
       it ("Infinity is NOT instance of Object", function() {
-        expect(Infinity instanceof Object).toBe__();      // true or false
+        expect(Infinity instanceof Object).toBeFalsy();      // true or false
       });
     });
 
@@ -116,11 +116,11 @@ describe ("Strangeness", function() {
       });
 
       it ("NaN is NOT instance of Number", function() {
-        expect(NaN instanceof Number).toBe__();         // true or false
+        expect(NaN instanceof Number).toBeFalsy();         // true or false
       });
 
       it ("NaN is NOT instance of Object", function() {
-        expect(NaN instanceof Object).toBe__();         // true or false
+        expect(NaN instanceof Object).toBeFalsy();         // true or false
       });
     });
 
@@ -130,7 +130,7 @@ describe ("Strangeness", function() {
       });
 
       it ("undefined is NOT instance of Object", function() {
-        expect(undefined instanceof Object).toBe__();   // true or false
+        expect(undefined instanceof Object).toBeFalsy();   // true or false
       });
     });
 
@@ -140,7 +140,7 @@ describe ("Strangeness", function() {
       });
 
       it ("null is NOT instance of Object", function() {
-        expect(null instanceof Object).toBe__();        // true or false
+        expect(null instanceof Object).toBeFalsy();        // true or false
       });
     });
 
