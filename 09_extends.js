@@ -11,7 +11,7 @@ describe ("extends", function() {
         }
       }
 
-      class Warrior __ Character {
+      class Warrior extends Character {
         constructor (name, damage) {
             super(150)                            // Allow to call super class' constructor
             this.name = name
@@ -19,15 +19,15 @@ describe ("extends", function() {
         }
       }
 
-      toto = new Warrior(__, __)
+      toto = new Warrior("toto", 10)
 
-      expect(toto.name).toEqual(__)
-      expect(toto.damage).toEqual(__)
-      expect(toto.hp).toEqual(__)
-      expect(toto.shout()).toEqual(__)
+      expect(toto.name).toEqual("toto")
+      expect(toto.damage).toEqual(10)
+      expect(toto.hp).toEqual(150)
+      expect(toto.shout()).toEqual("FUS")
 
-      expect(toto instanceof __).toBeTruthy()  // toto is an instance of its constructor
-      expect(toto instanceof __).toBeTruthy()  // toto is an instance of its super class
+      expect(toto instanceof Warrior).toBeTruthy()  // toto is an instance of its constructor
+      expect(toto instanceof Character).toBeTruthy()  // toto is an instance of its super class
     })
 
     it ("can override its super class properties", function () {
@@ -41,7 +41,7 @@ describe ("extends", function() {
         }
       }
 
-      class Warrior __ Character {
+      class Warrior extends Character {
         constructor (name, damage) {
             super(150)
             this.hp = 200
@@ -54,10 +54,10 @@ describe ("extends", function() {
         }
       }
 
-      toto = new Warrior(__, __)
+      toto = new Warrior("toto", 10)
 
-      expect(toto.hp).toEqual(__)
-      expect(toto.shout()).toEqual(__)
+      expect(toto.hp).toEqual(200)
+      expect(toto.shout()).toEqual("RO DAH")
     })
 
     it ("can access to a property of the super class using the keyword super", function () {
@@ -71,7 +71,7 @@ describe ("extends", function() {
         }
       }
 
-      class Warrior __ Character {
+      class Warrior extends Character {
         constructor (name, damage) {
             super(150)
             this.name = name
@@ -79,12 +79,12 @@ describe ("extends", function() {
         }
 
         shout () {
-          return __.shout() + " RO DAH"
+          return Character.prototype.shout() + " RO DAH"
         }
       }
 
-      toto = new Warrior(__, __)
+      toto = new Warrior("toto", 10)
 
-      expect(toto.shout()).toEqual(__)
+      expect(toto.shout()).toEqual("FUS RO DAH")
     })
   })

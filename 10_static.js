@@ -6,15 +6,15 @@ describe ("static", function() {
             constructor () {
             }
 
-            __ staticMethod () {
+            static staticMethod () {
               return "This is a static method"
             }
 
           }
 
-          expect(__.staticMethod()).toEqual(__)    // we can access a static property using the class name
+          expect(Character.staticMethod()).toEqual("This is a static method")    // we can access a static property using the class name
 
           const warrior = new Character()
-          expect(warrior.staticMethod).toBe__()   // static methods are not defined for instances of the class
+          expect(warrior.staticMethod).toBeUndefined()   // static methods are not defined for instances of the class
         })
   })

@@ -1,29 +1,29 @@
 describe ("Class", function() {
 
   it ("is defined using the class keyword", function() {
-    __ Character {
+    class Character {
     }
 
     const warrior = new Character()             // Has a constructor by default
-    expect(warrior instanceof __).toBeTruthy()  // warrior is an instance of its constructor
+    expect(warrior instanceof Character).toBeTruthy()  // warrior is an instance of its constructor
   })
 
   it ("default constructor can be overriden by a custom one", function () {
-    __ Character {
-      __  (hp) {
+    class Character {
+      constructor  (hp) {
         this.hp = hp
       }
     }
 
-    const warrior = new Character(__)
+    const warrior = new Character(10)
     expect(warrior.hp).toBeDefined()
-    expect(warrior.hp).toEqual(__)
-    expect(warrior.hasOwnProperty("hp")).toBe__()
+    expect(warrior.hp).toEqual(10)
+    expect(warrior.hasOwnProperty("hp")).toBeTruthy()
   })
 
   it ("methods are actually added to the class prototype", function () {
-    __ Character {
-      __  (hp) {
+    class Character {
+      constructor  (hp) {
         this.hp = hp
       }
 
@@ -32,16 +32,16 @@ describe ("Class", function() {
       }
     }
 
-    const warrior = new Character(__)
+    const warrior = new Character(10)
     expect(warrior.shout).toBeDefined()
-    expect(warrior.shout()).toEqual(__)
-    expect(warrior.hasOwnProperty("shout")).toBe__()
-    expect(Character.prototype.hasOwnProperty("shout")).toBe__()
+    expect(warrior.shout()).toEqual("FUS")
+    expect(warrior.hasOwnProperty("shout")).toBeFalsy()
+    expect(Character.prototype.hasOwnProperty("shout")).toBeTruthy()
   })
 
   it ("are just special functions", function() {
-    __ Character {
-      __  (hp) {
+    class Character {
+      constructor  (hp) {
         this.hp = hp
       }
 
@@ -50,7 +50,7 @@ describe ("Class", function() {
       }
     }
 
-    expect(typeof Character).toEqual(__)
-    expect(Character instanceof __).toBeTruthy()
+    expect(typeof Character).toEqual("function")
+    expect(Character instanceof Object).toBeTruthy()
   })
 })
